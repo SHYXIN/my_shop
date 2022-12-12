@@ -83,6 +83,9 @@ INSTALLED_APPS = [
     'treebeard',
     'sorl.thumbnail',   # Default thumbnail backend, can be replaced
     'django_tables2',
+    
+    # Django apps that the sandbox depends on
+    'django.contrib.sitemaps',
 ]
 
 SITE_ID = 1
@@ -247,3 +250,5 @@ HAYSTACK_CONNECTIONS = {
         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
     },
 }
+
+OSCAR_DEFAULT_CURRENCY = 'CNY'

@@ -19,11 +19,8 @@ urlpatterns = [
     path('i18n/', include(django.conf.urls.i18n)),
 
     # include a basic sitemap
-    # path('sitemap.xml', views.index,
-    #     {'sitemaps': base_sitemaps}),
-    # path('sitemap-<slug:section>.xml', views.sitemap,
-    #     {'sitemaps': base_sitemaps},
-    #     name='django.contrib.sitemaps.views.sitemap')
+    path('sitemap.xml', views.index, {'sitemaps': base_sitemaps}),
+    path('sitemap-<slug:section>.xml', views.sitemap, {'sitemaps': base_sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
 
 # Prefix Oscar URLs with language codes

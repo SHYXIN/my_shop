@@ -8,12 +8,13 @@ build_sandbox: sandbox_clean sandbox_load_user sandbox_load_data ## Creates a sa
 
 sandbox_clean: ## Clean sandbox images,cache,static and database
 	# Remove media
-	-rm -rf media/images
-	-rm -rf media/cache
-	-rm -rf static
-	-rm -f db.sqlite3
+	rm -rf media/images
+	rm -rf media/cache
+	rm -rf static
+	rm -f db.sqlite3
 	# Create database
 	python manage.py migrate
+	sleep 2
 
 sandbox_load_user: ## Load user data into sandboxd
 	python manage.py loaddata fixtures/auth.json
